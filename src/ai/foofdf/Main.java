@@ -44,7 +44,25 @@ public class Main {
     private static void dumpFields(PdfReader reader) {
         final Map<String, AcroFields.Item> fields = reader.getAcroFields().getFields();
         for (String name : fields.keySet()) {
-            System.out.println(name);
+            final AcroFields.Item item = fields.get(name);
+            PdfDictionary dct = null;
+            try {
+                dct = item.getMerged(0);
+            } catch(Exception exc) {
+                System.out.println(name);
+                continue;
+            }
+            for (PdfName prop : dct.getKeys()) {
+                final PdfObject value = dct.get(prop);
+                if(value instanceof PdfString) {
+                    System.out.println(name + "#" + prop.toString() + "=" + ((PdfString)value).toUnicodeString());
+                }
+                if(value instanceof PdfNumber || value instanceof PdfBoolean || value instanceof PdfName) {
+                    System.out.println(name + "#" + prop.toString() + "=" + value);
+                }
+
+            }
+
         }
     }
 
