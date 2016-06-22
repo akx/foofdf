@@ -10,7 +10,6 @@ class Options {
         Options options = new Options();
         for (int i = 0; i < args.length; i++) {
             final String arg = args[i];
-            System.out.println(arg);
             if (arg.equals("-i")) {
                 options.inputPdf = args[i + 1];
                 i ++;
