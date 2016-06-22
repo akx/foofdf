@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="foofdf:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/foofdf_jar</output-path>
+    <root id="root">
+      <element id="archive" name="foofdf.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="foofdf" />
+      </element>
+      <element id="library" level="project" name="itextpdf-5.5.9" />
+      <element id="library" level="project" name="bcprov-jdk15on-1.49" />
+    </root>
+  </artifact>
+</component>

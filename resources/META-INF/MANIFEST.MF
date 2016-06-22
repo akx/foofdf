@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: itextpdf-5.5.9.jar bcprov-jdk15on-1.49.jar
+Main-Class: ai.foofdf.Main
+
